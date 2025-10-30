@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Needs A Notary? - Central Virginia Notary Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #3a5a40;
+            text-decoration: none;
+            font-size: 1em;
+            margin-bottom: 30px;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #588157;
+        }
+
+        .back-link::before {
+            content: '← ';
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #3a5a40;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .intro {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #3a5a40;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #3a5a40;
+            margin: 40px 0 20px 0;
+            border-bottom: 2px solid #588157;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            color: #588157;
+            margin: 30px 0 15px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        li {
+            color: #3a5a40;
+            line-height: 1.8;
+            margin: 12px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #588157;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .category-title {
+            font-weight: bold;
+            color: #3a5a40;
+        }
+
+        .va-requirements {
+            background: linear-gradient(135deg, rgba(58, 90, 64, 0.1), rgba(88, 129, 87, 0.1));
+            border-left: 4px solid #588157;
+            padding: 25px;
+            margin: 40px 0;
+            border-radius: 10px;
+        }
+
+        .va-requirements h2 {
+            border: none;
+            margin-top: 0;
+            font-size: 1.6em;
+        }
+
+        .va-requirements ul {
+            margin-top: 20px;
+        }
+
+        .va-requirements li::before {
+            content: '⚠';
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #3a5a40 0%, #588157 100%);
+            color: white;
+            padding: 18px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(58, 90, 64, 0.3);
+            font-family: 'Georgia', serif;
+            margin: 40px 0 20px 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(58, 90, 64, 0.4);
+            background: linear-gradient(135deg, #2d4532 0%, #466945 100%);
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+
+            .intro {
+                font-size: 1.05em;
+            }
+
+            li {
+                padding-left: 25px;
+                font-size: 0.95em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">Back to Home</a>
+        
+        <h1>Who Needs A Notary?</h1>
+        
+        <p class="intro">
+            Anyone signing a legal or financial document, such as a will, deed, or power of attorney, needs a notary to verify their identity and witness the signature. This includes individuals in a wide range of situations, from buying a home to establishing an estate plan, as well as businesses that need to notarize contracts, loan agreements, and other important paperwork.
+        </p>
+
+        <h2>For Individuals</h2>
+        <ul>
+            <li><span class="category-title">Estate Planning:</span> Wills, living wills, and powers of attorney</li>
+            <li><span class="category-title">Real Estate:</span> Property deeds, mortgage documents, and leasing agreements</li>
+            <li><span class="category-title">Financial Matters:</span> Loan documents and insurance claims</li>
+            <li><span class="category-title">Legal and Personal:</span> Affidavits, sworn statements, and name change documents</li>
+            <li><span class="category-title">Travel:</span> Travel consent forms for minors</li>
+            <li><span class="category-title">Vehicle Transfers:</span> Title and bill of sale forms for cars, motorcycles, or boats</li>
+            <li><span class="category-title">Immigration:</span> Certain forms, such as affidavits or sworn statements, for applications</li>
+        </ul>
+
+        <h2>For Businesses</h2>
+        <ul>
+            <li><span class="category-title">Financial Services:</span> Banks, insurance agencies, and mortgage companies often require notarization for loan documents and claims</li>
+            <li><span class="category-title">Real Estate:</span> Real estate agencies need notarization for deeds, permits, and leasing agreements</li>
+            <li><span class="category-title">Automotive:</span> Car dealerships need it for title transfers and purchase agreements</li>
+            <li><span class="category-title">Contracts:</span> Any business, regardless of size, may need a notary for partnership agreements, loan contracts, and other business contracts</li>
+            <li><span class="category-title">Leasing:</span> Equipment leasing companies use notarization for their contracts</li>
+            <li><span class="category-title">Other Industries:</span> Construction companies, schools, and corporations of all types</li>
+        </ul>
+
+        <div class="va-requirements">
+            <h2>Virginia Notary Requirements & Limitations</h2>
+            <ul>
+                <li>A notary is a public official appointed by the Governor. Even though a notary may hold that position to serve his or her employer, no employer or supervisor can impose requirements pertaining to a notary that are contrary to Virginia's laws and regulations pertaining to notaries.</li>
+                <li>Valid photo identification is required for all notarizations.</li>
+                <li>A Virginia notary cannot certify birth certificates, marriage certificates, or death certificates (copies or originals).</li>
+                <li>A Virginia notary is not authorized to perform marriages or any act that constitutes the practice of law.</li>
+                <li>A Virginia notary may notarize a document to be filed and used outside of Virginia if it is signed and notarized in Virginia.</li>
+            </ul>
+        </div>
+
+        <div class="button-container">
+            <a href="index.html#book" class="cta-button">Book An Appointment</a>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="index.html" class="back-link">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
