@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book An Appointment - Central Virginia Notary Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #3a5a40;
+            text-decoration: none;
+            font-size: 1em;
+            margin-bottom: 30px;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #588157;
+        }
+
+        .back-link::before {
+            content: '← ';
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #3a5a40;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .intro {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #3a5a40;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .contact-methods {
+            background: linear-gradient(135deg, rgba(58, 90, 64, 0.1), rgba(88, 129, 87, 0.1));
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px 0;
+        }
+
+        .contact-item {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .contact-item h2 {
+            color: #3a5a40;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        .contact-item a {
+            color: #588157;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #3a5a40;
+        }
+
+        .contact-note {
+            font-size: 1em;
+            color: #588157;
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        .availability-box {
+            background: rgba(255, 255, 255, 0.7);
+            border-left: 4px solid #588157;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+
+        .availability-box h3 {
+            color: #3a5a40;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .availability-box p {
+            color: #3a5a40;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 40px 0;
+            color: #588157;
+            font-size: 1.5em;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 35px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .contact-form h2 {
+            color: #3a5a40;
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 1.6em;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #3a5a40;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #588157;
+            border-radius: 8px;
+            font-family: 'Georgia', serif;
+            font-size: 1em;
+            background: rgba(255, 255, 255, 0.9);
+            color: #3a5a40;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3a5a40;
+            background: white;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #3a5a40 0%, #588157 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
+            box-shadow: 0 4px 15px rgba(58, 90, 64, 0.3);
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(58, 90, 64, 0.4);
+            background: linear-gradient(135deg, #2d4532 0%, #466945 100%);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .contact-methods {
+                padding: 25px 20px;
+            }
+
+            .contact-item a {
+                font-size: 1.1em;
+                word-break: break-all;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src="logo.png" alt="Central Virginia Notary Services" style="max-width: 400px; width: 100%; height: auto;">
+        </div>
+
+        <a href="index.html" class="back-link">Back to Home</a>
+        
+        <h1>Book An Appointment</h1>
+        
+        <p class="intro">
+            I'm here to help with all your notary needs. Reach out by phone, text, or email to schedule your appointment.
+        </p>
+
+        <div class="contact-methods">
+            <div class="contact-item">
+                <h2>Phone / Text</h2>
+                <a href="tel:6105643598">(610) 564-3598</a>
+                <p class="contact-note">Text preferred</p>
+            </div>
+
+            <div class="contact-item">
+                <h2>Email</h2>
+                <a href="mailto:CentralVANotary@proton.me">CentralVANotary@proton.me</a>
+            </div>
+        </div>
+
+        <div class="availability-box">
+            <h3>Availability</h3>
+            <p>
+                <strong>Monday & Tuesday:</strong> 5:00 AM - 8:00 PM<br>
+                <strong>Wednesday:</strong> By appointment only<br>
+                <strong>Thursday - Sunday:</strong> 5:00 AM - 12:00 PM (Noon)
+            </p>
+            <p style="margin-top: 15px;">
+                I respond to all inquiries within 24 hours, and often much sooner. Same-day and after-hours appointments may be available with advance notice.
+            </p>
+        </div>
+
+        <div class="divider">or</div>
+
+        <div class="contact-form">
+            <h2>Send Me A Message</h2>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Your Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Type of Service Needed</label>
+                    <input type="text" id="service" name="service" placeholder="e.g., General Notary, Loan Signing, etc.">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message / Details *</label>
+                    <textarea id="message" name="message" required placeholder="Please include your preferred date/time and location for the appointment"></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="index.html" class="back-link">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
