@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Signing Agent - Central Virginia Notary Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #3a5a40;
+            text-decoration: none;
+            font-size: 1em;
+            margin-bottom: 30px;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #588157;
+        }
+
+        .back-link::before {
+            content: '← ';
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #3a5a40;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .intro {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #3a5a40;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #3a5a40;
+            margin: 40px 0 20px 0;
+            border-bottom: 2px solid #588157;
+            padding-bottom: 10px;
+        }
+
+        .fee-table {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .fee-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(58, 90, 64, 0.2);
+            color: #3a5a40;
+        }
+
+        .fee-item:last-child {
+            border-bottom: none;
+        }
+
+        .fee-name {
+            font-weight: normal;
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .fee-price {
+            font-weight: bold;
+            color: #588157;
+            white-space: nowrap;
+        }
+
+        .services-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .services-list li {
+            color: #3a5a40;
+            line-height: 1.8;
+            margin: 12px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .services-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #588157;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(58, 90, 64, 0.1), rgba(88, 129, 87, 0.1));
+            border-left: 4px solid #588157;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+
+        .highlight-box p {
+            color: #3a5a40;
+            line-height: 1.8;
+            margin: 10px 0;
+        }
+
+        .highlight-box strong {
+            color: #588157;
+        }
+
+        .service-area {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(88, 129, 87, 0.1);
+            border-radius: 10px;
+        }
+
+        .service-area h3 {
+            color: #3a5a40;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .service-area p {
+            color: #3a5a40;
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #3a5a40 0%, #588157 100%);
+            color: white;
+            padding: 18px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(58, 90, 64, 0.3);
+            font-family: 'Georgia', serif;
+            margin: 40px 0 20px 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(58, 90, 64, 0.4);
+            background: linear-gradient(135deg, #2d4532 0%, #466945 100%);
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .fee-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .fee-price {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src="logo.png" alt="Central Virginia Notary Services" style="max-width: 400px; width: 100%; height: auto;">
+        </div>
+
+        <a href="index.html" class="back-link">Back to Home</a>
+        
+        <h1>Loan Signing Agent</h1>
+        
+        <p class="intro">
+            Certified Loan Signing Agent providing professional, accurate, and confidential closing services for title companies, lenders, and signing services. All services are performed with meticulous attention to detail to ensure a smooth signing experience for your clients.
+        </p>
+
+        <h2>Loan Signing Services</h2>
+        
+        <ul class="services-list">
+            <li>Refinance</li>
+            <li>HELOC (Home Equity Line of Credit)</li>
+            <li>Reverse Mortgage</li>
+            <li>Purchase Signings</li>
+            <li>Loan Applications</li>
+            <li>Cash Deals</li>
+        </ul>
+
+        <h2>Loan Signing Fees</h2>
+        
+        <div class="fee-table">
+            <div class="fee-item">
+                <span class="fee-name">Standard Loan Signing (Refinance, HELOC)</span>
+                <span class="fee-price">$85</span>
+            </div>
+            
+            <div class="fee-item">
+                <span class="fee-name">Full Purchase</span>
+                <span class="fee-price">$125</span>
+            </div>
+            
+            <div class="fee-item">
+                <span class="fee-name">Reverse Mortgage</span>
+                <span class="fee-price">$125</span>
+            </div>
+            
+            <div class="fee-item">
+                <span class="fee-name">Loan Application / Cash Deal</span>
+                <span class="fee-price">$85</span>
+            </div>
+        </div>
+
+        <h2>Additional Fees</h2>
+        
+        <div class="fee-table">
+            <div class="fee-item">
+                <span class="fee-name">eDocuments</span>
+                <span class="fee-price">+ $25</span>
+            </div>
+            
+            <div class="fee-item">
+                <span class="fee-name">Travel beyond 25 miles from Appomattox</span>
+                <span class="fee-price">+ $25</span>
+            </div>
+            
+            <div class="fee-item">
+                <span class="fee-name">Rush / Same-Day Requests</span>
+                <span class="fee-price">+ $25</span>
+            </div>
+        </div>
+
+        <div class="service-area">
+            <h3>Service Area</h3>
+            <p>
+                Appomattox County • Lynchburg • Farmville • Surrounding Counties
+            </p>
+        </div>
+
+        <div class="highlight-box">
+            <p><strong>Professional Commitment:</strong> All loan signings are performed with professionalism, accuracy, and confidentiality to ensure a smooth signing experience for your clients.</p>
+            <p><strong>What to Expect:</strong> Prompt communication, on-time arrivals, proper identification verification, thorough document review, and timely scan-backs or drop-offs as requested.</p>
+        </div>
+
+        <div class="button-container">
+            <a href="index.html#book" class="cta-button">Book An Appointment</a>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="index.html" class="back-link">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
